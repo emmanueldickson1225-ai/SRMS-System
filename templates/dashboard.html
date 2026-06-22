@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Dashboard Overview</h2>
+
+<div class="card-container">
+
+    <!-- TOTAL STUDENTS -->
+    <div class="card">
+        <h2>Total Students</h2>
+        <h1>{{ total_students }}</h1>
+    </div>
+
+    <!-- REGISTER STUDENT -->
+    <div class="card">
+        <h2>Register Student</h2>
+        <p>Add new student to system</p>
+        <a href="/register-form">Open Form</a>
+    </div>
+<h3>Students per Course</h3>
+
+<ul>
+{% for c in chart_data %}
+    <li>{{ c[0] }} - {{ c[1] }}</li>
+{% endfor %}
+</ul>
+
+    <!-- VIEW STUDENTS -->
+    <div class="card">
+        <h2>Students List</h2>
+        <p>View all students in system</p>
+        <a href="/students">Open List</a>
+    </div>
+
+    <!-- SYSTEM STATUS -->
+    <div class="card">
+        <h2>System Status</h2>
+        <p>SRMS is running normally</p>
+        <span style="color:green;">● Online</span>
+    </div>
+
+</div>
+
+{% endblock %}
